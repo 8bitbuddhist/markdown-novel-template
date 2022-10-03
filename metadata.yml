@@ -1,0 +1,9 @@
+---
+title: My Novel
+subtitle: Draft 1
+author: 8bitbuddhist
+date: September 2022
+language: en-US
+include-before:
+- '`\newpage{}`{=latex}'
+...
