@@ -17,9 +17,9 @@ This project uses this file naming convention:
   - Chapter_01.md
   - Chapter_02.md
   - etc.
-- Back Matter (Appendices, Epilogues) pages start with `EA*`
-  - EA1_Appendix.md
-  - EA2_Epilogue.md
+- Back Matter (Appendices, Epilogues) pages start with `E*`
+  - E1_Appendix.md
+  - E2_Epilogue.md
   - etc.
 - Author’s notes (research, storyboards, etc.) are stored in the `Notes` folder. You can structure this folder however you wish. None of its contents will be compiled into your final novel.
 
@@ -38,6 +38,12 @@ You’ll need to install the following software first: `gawk` `pandoc` `pandoc-c
 ### Setting metadata
 
 The compile script pulls metadata from `metadata.yml` when generating the ebook. In this file, make sure to change the `title`, `subtitle`, `author`, and `date` fields to suit your needs.
+
+
+
+### Changing the cover image
+
+Replace `Notes/cover.png` with your novel’s cover image.
 
 
 
