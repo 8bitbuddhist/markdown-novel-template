@@ -14,4 +14,4 @@ include-before:
 - '`\newpage{}`{=latex}'
 - '`\tableofcontents{}`{=latex}'
 - '`\newpage{}`{=latex}'
-...
+---

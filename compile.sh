@@ -6,8 +6,9 @@ DRAFT_FILE="drafts/${DRAFT}/${DRAFT}" &&\
 # Create the draft directory if it doesn't already exist
 mkdir -p drafts/${DRAFT} &&\
 
-# Add page breaks to the end of each Markdown file
-gawk 'FNR==1{print ""}1; ENDFILE{print "\\newpage"}' *.md > $DRAFT_FILE.md &&\
+# Grab sections (excluding the Readme) and add a page break to the end of each one.
+FILES=$(ls -1 *.md | grep -v '^Readme.md$') &&\
+gawk 'FNR==1{print ""}1; ENDFILE{print "\\newpage"}' $FILES > $DRAFT_FILE.md &&\
 
 # Generate the output files:
 #		Markdown -> DOCX
