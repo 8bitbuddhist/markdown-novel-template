@@ -2,55 +2,49 @@
 
 This folder provides a blank novel template for writing in the [Markdown](https://daringfireball.net/projects/markdown/) markup language. This also provides a script for compiling the complete work into Markdown, EPUB, Microsoft Word, and PDF formats.
 
+## File Structure
 
+The main folder consists of Markdown files. Each file corresponds to a single section/chapter of the book. This project uses the following file naming convention:
 
-## File Naming
-
-This project uses this file naming convention:
-
-- Front Matter (Foreward, Preface, etc.) pages start with `A*`:
-  - A1_Copyright.md
-  - A2_Dedication.md
-  - A3_Forward.md
+- `AXX_` files are for front Matter (Foreward, Preface, etc.):
+  - A01_Copyright.md
+  - A02_Preface.md
   - etc.
-- Chapters start with `Chapter_*`:
-  - Chapter_01.md
-  - Chapter_02.md
+- `CXX_` files are for chapters:
+  - C01.md
+  - C02.md
   - etc.
-- Back Matter (Appendices, Epilogues) pages start with `E*`
-  - E1_Appendix.md
-  - E2_Epilogue.md
+- `EXX_` files are for back Matter (Appendices, Epilogues):
+  - E01_Appendix.md
+  - E02_Epilogue.md
   - etc.
-- Author’s notes (research, storyboards, etc.) are stored in the `Notes` folder. You can structure this folder however you wish. None of its contents will be compiled into your final novel.
+- The `Notes` folder is for any content that you don't want included in the final draft. Use this folder to store research, storyboards, images, etc. You can structure this folder however you want.
 
-You don’t need a Title Page or Table of Contents. These are automatically generated for you!
+**Note:** You don’t need a Title Page or Table of Contents. These are automatically generated for you!
 
 ## Compiling the Novel
 
-To compile your novel into a complete ebook, use the `compile.sh` script. 
+The `compile.sh` script is a helper script meant to compile and format your novel into common file formats (EPUB, DOCX, and PDF).
 
 ### Requirements
 
-You’ll need to install the following software first: `gawk` `pandoc` `pandoc-crossref` `texlive-core`.
+You’ll need to install the following software:
 
-
+- `gawk`
+- `pandoc`
+- `pandoc-crossref`
+- `texlive-core`
 
 ### Setting metadata
 
-The compile script pulls metadata from `metadata.yml` when generating the ebook. In this file, make sure to change the `title`, `subtitle`, `author`, and `date` fields to suit your needs.
-
-
+The compile script pulls metadata from `metadata.yml` when generating the ebook. Make sure to change the `title`, `subtitle`, `author`, and `date` fields to meet your requirements.
 
 ### Changing the cover image
 
-Replace `Notes/cover.png` with your novel’s cover image.
-
-
+Replace `cover.png` with your cover image.
 
 ### Compiling
 
-Run the `compile.sh` file to compile the novel into a single complete Markdown file, a Word document, an EPUB file, and a PDF, named `Draft <draft num>.ext`. These are saved under the `drafts` folder using the draft number identified by `DRAFT_NUM`.
-
-
+Run the `compile.sh` file to compile your novel. This creates a subfolder in `Drafts` named after the current git branch. For example, if your branch is called `main`, then your drafts will be created in `Drafts/main/`. I recommend creating a new branch for each draft, but how you manage this is up to you.
 
 Happy writing!

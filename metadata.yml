@@ -1,9 +1,17 @@
 ---
 title: My Novel
-subtitle: Draft 1
+subtitle: My subtitle
 author: 8bitbuddhist
-date: September 2022
+date: February 2022
 language: en-US
+output: 
+  pdf_document:
+    toc: no
+    number_sections: true
+fontsize: 12pt
+cover-image: cover.png
 include-before:
+- '`\newpage{}`{=latex}'
+- '`\tableofcontents{}`{=latex}'
 - '`\newpage{}`{=latex}'
 ...
