@@ -45,6 +45,6 @@ Replace `cover.png` with your cover image.
 
 ### Compiling
 
-Run the `compile.sh` file to compile your novel. This creates a subfolder in `Drafts` named after the current git branch. For example, if your branch is called `main`, then your drafts will be created in `Drafts/main/`. I recommend creating a new branch for each draft, but how you manage this is up to you.
+Run the `compile.sh` file to compile your novel. This creates a subfolder in `drafts` named after the current git branch. For example, if your branch is called `main`, then your drafts will be created in `drafts/main/`. I recommend creating a new branch for each draft, but how you manage this is up to you.
 
 Happy writing!
