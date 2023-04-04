@@ -7,7 +7,7 @@ DRAFT_FILE="drafts/${DRAFT}/${DRAFT}" &&\
 mkdir -p drafts/${DRAFT} &&\
 
 # Grab sections (excluding the Readme) and add a page break to the end of each one.
-FILES=$(ls -1 *.md | grep -v '^Readme.md$') &&\
+FILES=$(ls -1 content/*.md) &&\
 gawk 'FNR==1{print ""}1; ENDFILE{print "\\newpage"}' $FILES > $DRAFT_FILE.md &&\
 
 # Generate the output files:

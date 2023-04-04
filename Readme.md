@@ -4,7 +4,7 @@ This folder provides a blank novel template for writing in the [Markdown](https:
 
 ## File Structure
 
-The main folder consists of Markdown files. Each file corresponds to a single section/chapter of the book. This project uses the following file naming convention:
+The contents of your novel are stored in the `content` folder. Each file corresponds to a single chapter/section of the book. This folder uses the following file naming convention:
 
 - `AXX_` files are for front Matter (Foreward, Preface, etc.):
   - A01_Copyright.md
@@ -18,7 +18,8 @@ The main folder consists of Markdown files. Each file corresponds to a single se
   - E01_Appendix.md
   - E02_Epilogue.md
   - etc.
-- The `Notes` folder is for any content that you don't want included in the final draft. Use this folder to store research, storyboards, images, etc. You can structure this folder however you want.
+
+The `notes` folder is for any content that you don't want included in the final draft. Use this folder to store research, storyboards, images, etc. You can structure this folder however you want.
 
 **Note:** You don’t need a Title Page or Table of Contents. These are automatically generated for you!
 
