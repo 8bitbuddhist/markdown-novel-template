@@ -1,16 +1,23 @@
 #!/bin/sh
 # Get the draft name from Git
-DRAFT=$(git rev-parse --abbrev-ref HEAD) &&\
-DRAFT_FILE="drafts/${DRAFT}/${DRAFT}" &&\
+DRAFT=$(git rev-parse --abbrev-ref HEAD)
+DRAFT_FILE="drafts/${DRAFT}/${DRAFT}"
 
 echo "Compiling new draft \"${DRAFT}\"..."
 
 # Create the draft directory if it doesn't already exist
-mkdir -p drafts/${DRAFT} &&\
+mkdir -p drafts/${DRAFT}
 
-# Grab sections (excluding the Readme) and add a page break to the end of each one.
-FILES=$(ls -1 content/*.md) &&\
-gawk 'FNR==1{print ""}1; ENDFILE{print "\\newpage"}' $FILES > $DRAFT_FILE.md &&\
+# Initialize new main file
+echo > $DRAFT_FILE.md
+
+# Grab content files and add a page break to the end of each one.
+find ./content/*.md -print0 | sort -z | while read -d $'\0' file
+do
+	echo >> $DRAFT_FILE.md
+	cat "$file" >> $DRAFT_FILE.md
+	echo "\\newpage" >> $DRAFT_FILE.md
+done
 
 # Generate the output files:
 #		Markdown -> DOCX
