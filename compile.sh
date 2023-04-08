@@ -3,6 +3,8 @@
 DRAFT=$(git rev-parse --abbrev-ref HEAD) &&\
 DRAFT_FILE="drafts/${DRAFT}/${DRAFT}" &&\
 
+echo "Compiling new draft \"${DRAFT}\"..."
+
 # Create the draft directory if it doesn't already exist
 mkdir -p drafts/${DRAFT} &&\
 
@@ -14,10 +16,10 @@ gawk 'FNR==1{print ""}1; ENDFILE{print "\\newpage"}' $FILES > $DRAFT_FILE.md &&\
 #		Markdown -> DOCX
 #		Markdown -> EPUB
 #		Markdown -> PDF (A4 size)
-#		Markdown -> PDF (standard book size)
+#		Markdown -> PDF (B6/Standard book size)
 pandoc -t docx $DRAFT_FILE.md -o $DRAFT_FILE.docx --metadata-file metadata.yml
 pandoc -t epub $DRAFT_FILE.md -o $DRAFT_FILE.epub --metadata-file metadata.yml
-pandoc $DRAFT_FILE.md -o ${DRAFT_FILE}_full.pdf --metadata-file metadata.yml -V geometry:"paper=letterpaper,layout=letterpaper"
-pandoc $DRAFT_FILE.md -o ${DRAFT_FILE}_book.pdf --metadata-file metadata.yml -V geometry:"paper=b5paper,layout=b5paper"
+pandoc $DRAFT_FILE.md -o ${DRAFT_FILE}-a4.pdf --metadata-file metadata.yml -V geometry:"a4paper" -V fontsize:"12pt"
+pandoc $DRAFT_FILE.md -o ${DRAFT_FILE}-b6.pdf --metadata-file metadata.yml -V geometry:"b6paper" -V fontsize:"10pt"
 
 echo "Done! Your new draft is in ${PWD}/drafts/${DRAFT}/"

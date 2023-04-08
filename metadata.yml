@@ -1,6 +1,6 @@
 ---
-title: My Novel
-subtitle: My subtitle
+title: markdown-novel-template
+subtitle: A template for writing novels in the Markdown markup language.
 author: 8bitbuddhist
 date: February 2022
 language: en-US
@@ -8,7 +8,6 @@ output:
   pdf_document:
     toc: no
     number_sections: true
-fontsize: 12pt
 cover-image: cover.png
 include-before:
 - '`\newpage{}`{=latex}'
