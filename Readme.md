@@ -1,3 +1,7 @@
+---
+date-created: '2023-08-15 09:08'
+date-modified: '2023-08-17 15:08'
+---
 # Markdown Novel Template
 
 This folder provides a blank novel template for writing in the [Markdown](https://daringfireball.net/projects/markdown/) markup language. This also provides a script for compiling the complete work into Markdown, EPUB, Microsoft Word, and PDF formats.
@@ -12,7 +16,7 @@ When compiling the novel, all Markdown files are sorted in alphabetical order an
 
 The `notes` folder is for any content that you don't want to include in the final draft. Use this folder to store research, storyboards, images, etc.
 
-**Note:** You don’t need a Title Page or Table of Contents. These are automatically generated for you!
+**Note:** You don't need a Title Page or Table of Contents. These are automatically generated for you!
 
 ### Recommended file structure
 
@@ -43,16 +47,17 @@ You can name the files in this folder however you want, but this template uses t
 
 ### Requirements
 
-To use the script, you’ll need to install the following software:
+To use the script, you'll need to install the following software (this list is for Arch Linux):
 
 - `find`
 - `pandoc`
 - `pandoc-crossref`
 - `texlive-core`
+- `texlive-fontsrecommended`
 
 ### Setting your own metadata (title, author, etc.)
 
-The `metadata.yml` file contains fields for setting the book’s `title`, `subtitle`, `author`, and publication `date`. The compile script uses this data to generate a title page. You can customize these fields as needed.
+The `metadata.yml` file contains fields for setting the book's `title`, `subtitle`, `author`, and publication `date`. The compile script uses this data to generate a title page. You can customize these fields as needed.
 
 ### Changing the cover image
 
