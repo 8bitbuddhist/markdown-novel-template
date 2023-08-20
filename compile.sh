@@ -12,10 +12,12 @@ mkdir -p drafts/${DRAFT}
 echo > $DRAFT_FILE.md
 
 # Grab content files and add a page break to the end of each one.
-find ./content/*.md -print0 | sort -z | while read -d $'\0' file
+find ./content/*.md ! -name content.md -print0 | sort -z | while read -d $'\0' file
 do
+	# Add newline to Markdown doc
 	echo >> $DRAFT_FILE.md
-	cat "$file" >> $DRAFT_FILE.md
+	# Clean up incoming Markdown and append it to final doc
+	sed '/%% Begin Waypoint %%/,/%% End Waypoint %%/d' $file >> $DRAFT_FILE.md
 	echo "\\newpage" >> $DRAFT_FILE.md
 done
 

@@ -2,7 +2,7 @@
 title: markdown-novel-template
 subtitle: A template for writing novels in the Markdown markup language.
 author: 8bitbuddhist
-date: February 2022
+date: August 2023
 language: en-US
 output:
   pdf_document:

@@ -1,8 +1,16 @@
 ---
-date-created: '2023-08-15 09:08'
-date-modified: '2023-08-17 15:08'
+date-created: '2023-08-15 12:08'
+date-modified: '2023-08-20 10:08'
 ---
 # Markdown Novel Template
+
+%% Begin Waypoint %%
+- **[[content]]**
+- **drafts**
+	- **[[main]]**
+- **[[notes]]**
+
+%% End Waypoint %%
 
 This folder provides a blank novel template for writing in the [Markdown](https://daringfireball.net/projects/markdown/) markup language. This also provides a script for compiling the complete work into Markdown, EPUB, Microsoft Word, and PDF formats.
 
@@ -54,6 +62,7 @@ To use the script, you'll need to install the following software (this list is f
 - `pandoc-crossref`
 - `texlive-core`
 - `texlive-fontsrecommended`
+- `texlive-latexrecommended`
 
 ### Setting your own metadata (title, author, etc.)
 
